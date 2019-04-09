@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import styles from './styles.css';
+import './styles.css';
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -40,10 +40,6 @@ export default class NavBar extends Component {
         window.dispatchEvent(new CustomEvent('updateProdId', {detail: this.state.finalSearchId}))
       })
     })
-    // .then(response => this.setState({searchResults: response.data}, () => {
-    //   console.log('we good')
-      // window.dispatchEvent(new CustomEvent('updateProdId', {detail: 3}))
-    // }))
     .catch(err => console.log('error', err));
   }
 
@@ -74,9 +70,11 @@ export default class NavBar extends Component {
             <datalist id='search' list='search'>
               {this.state.searchResults.map(item => (
                 <option value={item.name}></option>
-                ))}
+              ))}
             </datalist>
-              <button type='submit'><i className="fas fa-search searchSubmit" onClick={this.handleSearch.bind(this)}></i></button>
+              <button type='submit'>
+                <i className="fas fa-search searchSubmit" onClick={this.handleSearch.bind(this)}></i>
+              </button>
           </div>
           <div className='shoppingcart'>Shopping Cart goes here</div>
         </div>
