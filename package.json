@@ -41,6 +41,7 @@
     "eslint-plugin-react": "^7.12.4",
     "jest": "^24.5.0",
     "nodemon": "^1.18.10",
+    "pm2": "^3.5.0",
     "style-loader": "^0.23.1",
     "supertest": "^4.0.2",
     "webpack": "^4.29.6",
