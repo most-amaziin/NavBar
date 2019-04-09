@@ -47,13 +47,30 @@ export default class NavBar extends Component {
     .catch(err => console.log('error', err));
   }
 
+  handleEnter(e) {
+    if (e.keyCode === 13) {
+      this.handleSearch(e);
+    }
+  }
+
   render() {
     return(
       <div className='navBar'>
         <div className='navContent'>
           <h1>Project Name</h1>
           <div className="searchField">
-            <input className='search' autoComplete='off' list='search' name='search' type='text' placeholder='Search...' onChange={this.handleSearchChange.bind(this)} default='none'></input>
+            <input 
+              className='search' 
+              autoComplete='off' 
+              list='search' 
+              name='search' 
+              type='text' 
+              placeholder='Search...' 
+              default='none'
+              onChange={this.handleSearchChange.bind(this)} 
+              onKeyDown={this.handleEnter.bind(this)}
+            >
+              </input>
             <datalist id='search' list='search'>
               {this.state.searchResults.map(item => (
                 <option value={item.name}></option>
