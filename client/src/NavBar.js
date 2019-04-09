@@ -22,7 +22,7 @@ export default class NavBar extends Component {
     e.preventDefault();
     if(this.state.allowTypeSearch) {
       this.setState({searchBoxValue: e.target.value, allowTypeSearch:false}, () => {
-        axios.get(`ec2-18-222-193-186.us-east-2.compute.amazonaws.com/api/products/names/partial?name=${this.state.searchBoxValue}`)
+        axios.get(`ec2-3-17-161-19.us-east-2.compute.amazonaws.com/api/products/names/partial?name=${this.state.searchBoxValue}`)
         .then(response => {
           this.setState({searchResults: response.data, allowTypeSearch: true})
         })
@@ -34,7 +34,7 @@ export default class NavBar extends Component {
   handleSearch(e) {
     e.preventDefault();
     const searchParam = this.state.searchBoxValue;
-    axios.get(`ec2-18-222-193-186.us-east-2.compute.amazonaws.com/api/products/names?name=${searchParam}`)
+    axios.get(`ec2-3-17-161-19.us-east-2.compute.amazonaws.com/api/products/names?name=${searchParam}`)
     .then(results => {
       this.setState({finalSearchId: results.data.productID}, () => {
         window.dispatchEvent(new CustomEvent('updateProdId', {detail: this.state.finalSearchId}))
