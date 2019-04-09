@@ -6,7 +6,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: 'ec2-18-222-193-186.us-east-2.compute.amazonaws.com',
+      host: 'ec2-18-218-200-166.us-east-2.compute.amazonaws.com',
       key: '~/.ssh/nav-bar.pem',
       ref: 'origin/master',
       repo: 'https://github.com/threetexansandacanadian/NavBar.git',
