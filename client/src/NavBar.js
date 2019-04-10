@@ -34,7 +34,7 @@ export default class NavBar extends Component {
   handleSearch(e) {
     e.preventDefault();
     const searchParam = this.state.searchBoxValue;
-    if (searchParam !== '') {
+    if (searchParam !== '' && this.state.searchResults.length !== 0) {
       axios.get(`http://ec2-3-17-161-19.us-east-2.compute.amazonaws.com/api/products/names?name=${searchParam}`)
       .then(results => {
         this.setState({finalSearchId: results.data.productID}, () => {
