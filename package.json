@@ -15,6 +15,7 @@
   "scripts": {
     "tests": "jest --runInBand --detectOpenHandles --bail --forceExit",
     "build": "webpack --config ./webpack.config.js -w --mode production",
+    "build-one": "webpack --config ./webpack.config.js --mode production",
     "start": "nodemon server"
   },
   "dependencies": {
