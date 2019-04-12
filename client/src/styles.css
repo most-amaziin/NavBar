@@ -4,7 +4,7 @@ body, html {
 }
 .navBar {
   width:100vw;
-  height:13vh;
+  height:82px;
 
   display: grid;
   grid-template-columns: 20% 1fr 20%;
@@ -12,6 +12,11 @@ body, html {
   align-items: center;
 
   background-color:darkseagreen; 
+}
+
+#yeeHawEh {
+  font-size: 3em;
+  margin: 0;
 }
 
 .searchField {
@@ -29,6 +34,17 @@ body, html {
   border-radius: 5px;
   padding: 0 10px 0 10px;
   font-size:88%;
+}
+
+#search {
+  background-color:black;
+}
+
+datalist {
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  outline: none;
 }
 
 .submitSearch {
