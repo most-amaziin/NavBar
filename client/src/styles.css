@@ -36,3 +36,17 @@ body, html {
   align-items: center;
   justify-content: center;
 }
+
+.shopping-container {
+  border: 1px solid black;
+  border-bottom: none;
+  height: 100%;
+  width: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shopping-cart {
+
+}

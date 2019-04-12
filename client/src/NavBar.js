@@ -10,12 +10,19 @@ export default class NavBar extends Component {
       searchResults: [],
       allowTypeSearch: true,
       finalSearchId: -Infinity,
-      searched: false
+      searched: false,
+      shoppingCart: []
     };
   }
   
   componentDidMount() {
-    window.addEventListener('updateProdId', () => this.setState({searched: true}))
+    window.addEventListener('buyItem', this.handleBuy.bind(this))
+  }
+
+  handleBuy(e) {
+    const itemsToBuy = this.state.shoppingCart;
+    itemsToBuy.push(e.detail)
+    this.setState({shoppingCart: itemsToBuy})
   }
 
   handleSearchChange(e) {
@@ -55,7 +62,7 @@ export default class NavBar extends Component {
     return(
       <div className='navBar'>
         <div className='navContent'>
-          <h1>Project Name</h1>
+          <h1>Yee-Haw Eh!</h1>
           <div className="searchField">
             <input 
               className='search' 
@@ -75,10 +82,17 @@ export default class NavBar extends Component {
               ))}
             </datalist>
               <button type='submit'>
-                <i className="fas fa-search searchSubmit" onClick={this.handleSearch.bind(this)}></i>
+                <i className="fas fa-search searchSubmit fa-2x" onClick={this.handleSearch.bind(this)}></i>
               </button>
           </div>
-          <div className='shoppingcart'>Shopping Cart goes here</div>
+          <div className='shopping-container' onClick={() => console.log('hell')}>
+            <div className='fas fa-shopping-cart fa-3x shopping-cart'></div>
+            <div id='shopping-dropdown'>
+            {this.state.shoppingCart.map(item => (
+              <div className='shoppingItem'>{item.name}</div>
+            ))}
+            </div>
+          </div>
         </div>
       </div>
     )
