@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ShoppingCart from './ShoppingCart.js';
 import './styles.css';
 
 export default class NavBar extends Component {
@@ -11,7 +12,7 @@ export default class NavBar extends Component {
       allowTypeSearch: true,
       finalSearchId: -Infinity,
       searched: false,
-      shoppingCart: []
+      shoppingCart: [{name:'Maple Syrup', price:10.00}, {name:'Crack', price:5.99}]
     };
   }
   
@@ -61,39 +62,25 @@ export default class NavBar extends Component {
   render() {
     return(
       <div className='navBar'>
-        <div className='navContent'>
-          <h1>Yee-Haw Eh!</h1>
-          <div className="searchField">
-            <input 
-              className='search' 
-              autoComplete='off' 
-              list='search' 
-              name='search' 
-              type='text' 
-              placeholder='Search...' 
-              default='none'
-              onChange={this.handleSearchChange.bind(this)} 
-              onKeyDown={this.handleEnter.bind(this)}
-            >
-              </input>
-            <datalist id='search' list='search'>
-              {this.state.searchResults.map(item => (
-                <option value={item.name}></option>
-              ))}
-            </datalist>
-              <button type='submit'>
-                <i className="fas fa-search searchSubmit fa-2x" onClick={this.handleSearch.bind(this)}></i>
-              </button>
-          </div>
-          <div className='shopping-container' onClick={() => console.log('hell')}>
-            <div className='fas fa-shopping-cart fa-3x shopping-cart'></div>
-            <div id='shopping-dropdown'>
-            {this.state.shoppingCart.map(item => (
-              <div className='shoppingItem'>{item.name}</div>
+        <h1>Yee-Haw Eh!</h1>
+        <div className="searchField">
+          <input 
+            className='search' autoComplete='off' 
+            list='search' name='search' type='text' 
+            placeholder='Search...' default='none'
+            onChange={this.handleSearchChange.bind(this)} 
+            onKeyDown={this.handleEnter.bind(this)}>
+          </input>
+          <datalist id='search' list='search'>
+            {this.state.searchResults.map(item => (
+              <option value={item.name}></option>
             ))}
-            </div>
-          </div>
+          </datalist>
+            <button className='submitSearch' type='submit'>
+              <i className="fas fa-search fa-2x" onClick={this.handleSearch.bind(this)}></i>
+            </button>
         </div>
+        <ShoppingCart shoppingCart={this.state.shoppingCart}/>
       </div>
     )
   }
