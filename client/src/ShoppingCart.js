@@ -13,7 +13,7 @@ export default class ShoppingCart extends Component {
     return (
       <div id='shopping-cart'>
         <div className='shopping-container' onClick={() => console.log('hell')}>
-          <div className='fas fa-shopping-cart fa-3x shopping-cart'></div>
+          <div className='fas fa-shopping-cart fa-3x'></div>
         </div>
         {/* <div id='shopping-dropdown'>
           {this.props.shoppingCart.map(item => (
