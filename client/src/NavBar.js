@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ShoppingCartIcon from './ShoppingCartIcon.js';
 import ShoppingCart from './ShoppingCart.js';
 import './styles.css';
 
@@ -59,6 +60,15 @@ export default class NavBar extends Component {
     }
   }
 
+  handleOpenShoppingCart() {
+    const isOn = document.getElementById('shopping-dropdown').style.opacity;
+    if (isOn === '0' || isOn === '') {
+      document.getElementById('shopping-dropdown').style.opacity = 1;
+    } else {
+      document.getElementById('shopping-dropdown').style.opacity = 0;
+    }
+  }
+
   render() {
     return(
       <div className='navBar'>
@@ -80,7 +90,8 @@ export default class NavBar extends Component {
               <i className="fas fa-search fa-2x" onClick={this.handleSearch.bind(this)}></i>
             </button>
         </div>
-        <ShoppingCart shoppingCart={this.state.shoppingCart}/>
+        <ShoppingCartIcon handleClick={this.handleOpenShoppingCart.bind(this)}/>
+        <ShoppingCart shoppingCart={this.state.shoppingCart} />
       </div>
     )
   }

@@ -93,3 +93,50 @@ datalist {
   color: white;
   cursor: pointer;
 }
+
+#shopping-dropdown {
+  position: absolute;
+  right: 85px;
+  top: 90px;
+  min-width:123px;
+  opacity: 0;
+
+  background-color: lightblue;
+  border-radius: 3px;
+  padding: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  align-items: center;
+}
+
+.cartTotal {
+  width: 90%;
+  list-style-type: none;
+  border-bottom: 1px solid darkgrey;
+  text-align: center;
+}
+
+.shoppingItem {
+  min-width:80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.shoppingItemName {
+  grid-column: span 2;
+  font-size: 1.2em;
+}
+
+.shoppingItemPrice {
+  color: rgb(65, 103, 165);
+}
+
+.shoppingItemQty {
+  font-size: .8em;
+  color: grey;
+}
