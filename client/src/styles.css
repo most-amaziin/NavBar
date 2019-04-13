@@ -108,7 +108,7 @@ datalist {
 
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: start;
+  justify-items: center;
   align-items: center;
 }
 
@@ -117,34 +117,57 @@ datalist {
   list-style-type: none;
   border-bottom: 1px solid darkgrey;
   text-align: center;
+  padding-top: 10px;
 }
 
 .shoppingItem {
-  width: 100%;
+  min-width: 80%;
   display: grid;
-  grid-template-columns: 1fr 20% 20%;
+  grid-template-columns: 100px 25px 25px;
   grid-column-gap: 5px;
   align-items: center;
-  padding: 10px 10px;
+  margin: 10px 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgray;
 }
 
 .shoppingItemName {
   grid-column: 1 / -1;
   font-size: 1.2em;
+  padding: 0 0 2px 0;
 }
 
 .shoppingItemPrice {
   color: rgb(65, 103, 165);
-  background-color:lightblue;
 }
 
 .shoppingItemQty {
   font-size: .8em;
   color: grey;
-  background-color: lightgreen;
 }
 
 .removeItem {
   color: #ff0000;
-  background-color: lightslategray;
+}
+
+.checkout {
+  width: 120px;
+  height: 34px;
+  margin: 10px;
+  margin-top: 0;
+  background-color: #7d89f1;
+  color: #ffffff;
+
+  font-size: 20px;
+
+  outline:none;
+  border:none;
+}
+
+.checkout:hover {
+  background-color: #5a64be;
+}
+
+.checkout:active {
+  background-color: #3f48a0;
 }

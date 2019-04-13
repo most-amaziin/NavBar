@@ -13,7 +13,7 @@ export default class NavBar extends Component {
       allowTypeSearch: true,
       finalSearchId: -Infinity,
       searched: false,
-      shoppingCart: [{name:'Nick Miron', price: 10000000},{name: 'Maple Syrup', price: 10.99}],
+      shoppingCart: [{name:'Nick Miron', price: 10000000000, qtyInCart: 1},{name: 'Maple Syrup', price: 10.99, qtyInCart: 1}],
       total: 0
     };
   }
