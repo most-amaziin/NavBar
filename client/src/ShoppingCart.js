@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ShoppingCart = (props) => {
+  console.log(props.itemQty)
     return (
       <>
         <ul id='shopping-dropdown'>
