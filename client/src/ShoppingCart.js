@@ -7,8 +7,8 @@ const ShoppingCart = (props) => {
         <ul id='shopping-dropdown'>
           <li id='totalPrice' className='cartTotal'>Total: {props.total}</li>
           {props.shoppingCart.map((item, i) => {
-            console.log(inCart, item.name);
             if(!inCart[item.name]) {
+              inCart[item.name] = true;
               return (
                 <li className='shoppingItem' id={`shoppingItem${i}`}>
                   <div className='shoppingItemName'>{item.name}</div>
@@ -17,8 +17,6 @@ const ShoppingCart = (props) => {
                   <div className='removeItem' onClick={() => props.handleRemove(i)}><i class="fas fa-minus-circle"></i></div>
                 </li>
               )
-            } else {
-              inCart[item.name] = true;
             }
           })}
         </ul>
