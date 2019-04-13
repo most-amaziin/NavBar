@@ -90,7 +90,7 @@ export default class NavBar extends Component {
   render() {
     return(
       <div className='navBar'>
-        <h1 id='yeeHawEh'>Yee-Haw, Eh!</h1>
+        <h1 id='yeeHawEh'>Yee-Haw, <span className='eh'>Eh!</span></h1>
         <div className="searchField">
           <input 
             className='search' autoComplete='off' 
@@ -104,9 +104,9 @@ export default class NavBar extends Component {
               <option value={item.name}></option>
             ))}
           </datalist>
-            <button className='submitSearch' type='submit'>
-              <i className="fas fa-search fa-2x" onClick={this.handleSearch.bind(this)}></i>
-            </button>
+          <button className='submitSearch' type='submit'>
+            <i className="fas fa-search fa-2x" onClick={this.handleSearch.bind(this)}></i>
+          </button>
         </div>
         <ShoppingCartIcon handleClick={this.handleOpenShoppingCart.bind(this)}/>
         <ShoppingCart shoppingCart={this.state.shoppingCart} itemQty={this.state.shoppingCartQty} total={this.state.total} handleRemove={this.handleRemoveFromCart.bind(this)}/>

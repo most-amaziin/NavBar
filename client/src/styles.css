@@ -1,28 +1,43 @@
+:root {
+  --nav-bar-blue: #232f3f;
+  --nav-bar-search-button: #ffbe61;
+  --title-text-orange: #ce6600;
+  --logo-accent-orange: #ff9a00;
+  --navy-blue-accent: #47a3c6;
+}
+
 body, html {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .navBar {
   width:100vw;
   height:82px;
 
   display: grid;
-  grid-template-columns: 20% 1fr 20%;
+  grid-template-columns: 25% 1fr 20%;
   justify-items: center;
   align-items: center;
 
-  background-color:darkseagreen; 
+  background-color: var(--nav-bar-blue); 
 }
 
 #yeeHawEh {
   font-size: 3em;
   margin: 0;
+  padding-left: 20px;
+  color: white;
+}
+
+.eh {
+  color: var(--title-text-orange);
 }
 
 .searchField {
   display: grid;
-  grid-template-columns: 1fr 100px;
-  grid-column-gap: 10px;
+  grid-template-columns: 1fr 70px;
+  /* grid-column-gap: 10px; */
   justify-items: center;
   align-items: center;
 }
@@ -31,7 +46,7 @@ body, html {
   width: 20vw;
   height:42px;
   border: 0;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
   padding: 0 10px 0 10px;
   font-size:88%;
 }
@@ -48,27 +63,27 @@ datalist {
 }
 
 .submitSearch {
-  width: 100px;
+  width: 70px;
   height: 42px;
-  background-color: #4456fa;
+  background-color: var(--nav-bar-search-button);
   outline: none;
   border: none;
-  border-radius: 5px;
-  margin: 7px;
-  color: white;
+  border-radius: 0px 5px 5px 0px;
+  /* margin: 7px; */
+  color: var(--nav-bar-blue);
   text-align: center;
   line-height: 50%;
 }
 
 .submitSearch:hover {
-  background-color: #4d5abb;
+  background-color: var(--logo-accent-orange);
   cursor: pointer;
 }
 
-.submitSearch:active {
+/* .submitSearch:active {
   background-color: #298b31;
   color:black;
-}
+} */
 
 #shopping-cart {
   height: 100%;
@@ -78,6 +93,7 @@ datalist {
   grid-template-columns: 100%;
   justify-items: center;
   align-items: center;  
+  color: #ffffff;
 }
 
 .shopping-container {
@@ -89,8 +105,7 @@ datalist {
 }
 
 .shopping-container:hover {
-  background-color: black;
-  color: white;
+  color: var(--navy-blue-accent);
   cursor: pointer;
 }
 
