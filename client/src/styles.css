@@ -101,9 +101,10 @@ datalist {
   min-width:123px;
   opacity: 0;
 
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  box-shadow: 0 2px 8px 0 #858585;
   border-radius: 3px;
-  padding: 10px;
+  padding: 0;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -119,24 +120,31 @@ datalist {
 }
 
 .shoppingItem {
-  min-width:80%;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 20% 20%;
   grid-column-gap: 5px;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 10px;
 }
 
 .shoppingItemName {
-  grid-column: span 2;
+  grid-column: 1 / -1;
   font-size: 1.2em;
 }
 
 .shoppingItemPrice {
   color: rgb(65, 103, 165);
+  background-color:lightblue;
 }
 
 .shoppingItemQty {
   font-size: .8em;
   color: grey;
+  background-color: lightgreen;
+}
+
+.removeItem {
+  color: #ff0000;
+  background-color: lightslategray;
 }

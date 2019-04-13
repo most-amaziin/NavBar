@@ -9,8 +9,8 @@ const ShoppingCart = (props) => {
             <li className='shoppingItem' id={`shoppingItem${i}`}>
               <div className='shoppingItemName'>{item.name}</div>
               <div className='shoppingItemPrice'>${item.price}</div>
-              <div className='shoppingItemQty'>x1</div>
-              <div className='removeItem' onClick={() => props.handleRemove(i)}>Remove</div>
+              <div className='shoppingItemQty'>x{props.itemQty[item.name]}</div>
+              <div className='removeItem' onClick={() => props.handleRemove(i)}><i class="fas fa-minus-circle"></i></div>
             </li>
           ))}
         </ul>

@@ -13,7 +13,8 @@ export default class NavBar extends Component {
       allowTypeSearch: true,
       finalSearchId: -Infinity,
       searched: false,
-      shoppingCart: [{name:'Maple Syrup', price:10.00}, {name:'Crack', price:5.99}, {name: 'what am i doing wrong?', price:1200}],
+      shoppingCart: [{name:'Nick Miron', price: 10000000},{name: 'Maple Syrup', price: 10.99}],
+      shoppingCartQty: {},
       total: 0
     };
   }
@@ -25,15 +26,16 @@ export default class NavBar extends Component {
   handleBuy(e) {
     const itemsToBuy = this.state.shoppingCart;
     itemsToBuy.push(e.detail)
+    const itemQty = this.state.shoppingCartQty;
+    itemQty[e.detail] ? itemQty[e.detail]++ : itemQty[e.detail] = 1;
   
-    this.setState({shoppingCart: itemsToBuy}, () => {
+    this.setState({shoppingCart: itemsToBuy, shoppingCartQty: itemQty}, () => {
       const newTotal = this.state.shoppingCart.reduce((acc, val) => {
         return acc += val.price;
       }, 0);
       this.setState({total: newTotal});
     })
   }
-
 
   handleSearchChange(e) {
     e.preventDefault();
@@ -108,7 +110,7 @@ export default class NavBar extends Component {
             </button>
         </div>
         <ShoppingCartIcon handleClick={this.handleOpenShoppingCart.bind(this)}/>
-        <ShoppingCart shoppingCart={this.state.shoppingCart} total={this.state.total} handleRemove={this.handleRemoveFromCart.bind(this)}/>
+        <ShoppingCart shoppingCart={this.state.shoppingCart} itemQty={this.state.shoppingCartQty} total={this.state.total} handleRemove={this.handleRemoveFromCart.bind(this)}/>
       </div>
     )
   }
