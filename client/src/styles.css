@@ -96,6 +96,7 @@ datalist {
 
 #shopping-dropdown {
   position: absolute;
+  z-index: 10;
   right: 85px;
   top: 90px;
   min-width:123px;
@@ -123,7 +124,7 @@ datalist {
 .shoppingItem {
   min-width: 80%;
   display: grid;
-  grid-template-columns: 100px 25px 25px;
+  grid-template-columns: 110px 25px 25px;
   grid-column-gap: 5px;
   align-items: center;
   margin: 10px 10px;
