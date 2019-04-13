@@ -27,7 +27,7 @@ export default class NavBar extends Component {
     const itemsToBuy = this.state.shoppingCart;
     itemsToBuy.push(e.detail)
     const itemQty = this.state.shoppingCartQty;
-    itemQty[e.detail] ? itemQty[e.detail]++ : itemQty[e.detail] = 1;
+    itemQty[e.detail.name] ? itemQty[e.detail.name]++ : itemQty[e.detail.name] = 1;
   
     this.setState({shoppingCart: itemsToBuy, shoppingCartQty: itemQty}, () => {
       const newTotal = this.state.shoppingCart.reduce((acc, val) => {
@@ -80,11 +80,14 @@ export default class NavBar extends Component {
   }
 
   handleRemoveFromCart(i) {
+    const itemQty = this.state.shoppingCartQty;
+    itemQty[this.state.shoppingCart[i].name]--;
     let newShoppingCart = [...this.state.shoppingCart];
     newShoppingCart.splice(i,1);
     const newTotal = newShoppingCart.reduce((acc, val) => {
       return acc += val.price;
     }, 0)
+
     this.setState({total: newTotal, shoppingCart: newShoppingCart});
   }
 
