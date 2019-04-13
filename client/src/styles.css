@@ -189,6 +189,9 @@ datalist {
 }
 
 @media (max-width: 950px) {
+  .navBar {
+    height: auto;
+  }
   #yeeHawEh {
     font-size: 2em;
   }
