@@ -16,7 +16,7 @@ body, html {
   height:82px;
 
   display: grid;
-  grid-template-columns: 25% 1fr 20%;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
 
@@ -31,7 +31,7 @@ body, html {
 }
 
 .eh {
-  color: var(--title-text-orange);
+  color: var(--logo-accent-orange);
 }
 
 .searchField {
@@ -186,4 +186,29 @@ datalist {
 
 .checkout:active {
   background-color: #3f48a0;
+}
+
+@media (max-width: 950px) {
+  #yeeHawEh {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 600px) {
+  .navBar {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
+  #yeeHawEh {
+    grid-column: 1 / -1;
+    margin: 5px;
+  }
+  .searchField {
+    margin: 5px;
+  }
+  .shopping-container {
+    color: var(--title-text-orange);
+    margin: 5px;
+  }
 }
