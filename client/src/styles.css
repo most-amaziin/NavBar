@@ -189,16 +189,17 @@ datalist {
   background-color: #3f48a0;
 }
 
-@media (max-width: 950px) {
+@media only screen and (max-width: 950px) {
   .navBar {
     height: auto;
+    padding: 10px;
   }
   #yeeHawEh {
     font-size: 2em;
   }
 }
 
-@media (max-width: 600px) {
+@media only screen and(max-width: 600px) {
   .navBar {
     display:grid;
     grid-template-columns: 1fr 1fr;
