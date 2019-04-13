@@ -7,6 +7,7 @@ const ShoppingCart = (props) => {
         <ul id='shopping-dropdown'>
           <li id='totalPrice' className='cartTotal'>Total: {props.total}</li>
           {props.shoppingCart.map((item, i) => {
+            console.log(inCart, item.name);
             if(!inCart[item.name]) {
               return (
                 <li className='shoppingItem' id={`shoppingItem${i}`}>
