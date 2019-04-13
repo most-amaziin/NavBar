@@ -142,7 +142,7 @@ datalist {
   grid-template-columns: 110px 25px 25px;
   grid-column-gap: 5px;
   align-items: center;
-  margin: 10px 10px;
+  margin: 10px 10px 0 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid lightgray;
 }
@@ -170,8 +170,8 @@ datalist {
   width: 120px;
   height: 34px;
   margin: 10px;
-  margin-top: 0;
-  background-color: #7d89f1;
+  margin-top: 10px;
+  background-color: var(--nav-bar-search-button);
   color: #ffffff;
 
   font-size: 20px;
@@ -181,7 +181,7 @@ datalist {
 }
 
 .checkout:hover {
-  background-color: #5a64be;
+  background-color: var(--logo-accent-orange);
 }
 
 .checkout:active {
