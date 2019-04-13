@@ -164,6 +164,7 @@ datalist {
 
 .removeItem {
   color: #ff0000;
+  cursor: pointer;
 }
 
 .checkout {
