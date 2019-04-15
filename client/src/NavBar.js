@@ -90,7 +90,7 @@ export default class NavBar extends Component {
   render() {
     return(
       <div className='navBar'>
-        <div id='yeeHawEh'>amaz <span className='eh'>in</span></div>
+        <div id='yeeHawEh'>amaz<span className='eh'>in</span></div>
         <div className="searchField">
           <input 
             className='search' autoComplete='off' 
