@@ -165,3 +165,42 @@ for (let j = 0; j < multiplier; j++) {
   Desc.insert([longString]);
   longString = "";
 }
+
+const dummyData = [
+  {
+    name: "name1a",
+    price: "$9.99",
+    bulletOne: "string1a",
+    bulletTwo: "string2a",
+    bulletThree: "string3a",
+    sellerName: "string4a",
+    description: "string5a"
+  },
+  {
+    name: "bname1",
+    price: "$9.99",
+    bulletOne: "bstring1",
+    bulletTwo: "bstring2",
+    bulletThree: "bstring3",
+    sellerName: "bstring4",
+    description: "bstring5"
+  },
+  {
+    name: "n1",
+    price: "$9.99",
+    bulletOne: "s1",
+    bulletTwo: "s2",
+    bulletThree: "s3",
+    sellerName: "s4",
+    description: "s5"
+  },
+  {
+    name: "1n1",
+    price: "$9.99",
+    bulletOne: "1s1",
+    bulletTwo: "2s2",
+    bulletThree: "3s3",
+    sellerName: "4s4",
+    description: "5s5"
+  }
+];
